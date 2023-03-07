@@ -2,6 +2,7 @@ from aws_cdk import (
     aws_s3 as s3,
     CfnOutput,
     Stack,
+    Token,
 )
 from constructs import Construct
 
@@ -25,6 +26,13 @@ class MyFirstCdkProjectStack(Stack):
             self,
             "myBucketId1",
         )
+
+        sns_topic_name = "abczys"
+
+        if not Token.is_unresolved(sns_topic_name) and len(sns_topic_name) > 10:
+            raise ValueError("Maximum value can be only 10 characters")
+
+        print(my_bucket.bucket_name)
 
         output_1 = CfnOutput(
             self,
