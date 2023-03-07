@@ -1,4 +1,5 @@
 from aws_cdk import (
+    aws_iam as iam,
     aws_s3 as s3,
     CfnOutput,
     Stack,
@@ -33,6 +34,11 @@ class MyFirstCdkProjectStack(Stack):
             raise ValueError("Maximum value can be only 10 characters")
 
         print(my_bucket.bucket_name)
+
+        iam.Group(
+            self,
+            "gid",
+        )
 
         output_1 = CfnOutput(
             self,
