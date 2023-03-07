@@ -1,7 +1,7 @@
 
-# Welcome to your CDK Python project!
+# Welcome to my first CDK project!
 
-This is a blank project for CDK development with Python.
+This is a basic project for CDK development with Python.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
